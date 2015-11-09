@@ -1,0 +1,16 @@
+#use data.frame() function to create a single data set 
+library(ISLR)
+attach(Auto)
+median(Auto$mpg)
+mpg01<-ifelse(Auto$mpg>=22.75,1,0)
+Auto<-data.frame(Auto,mpg01)
+head(Auto)
+#investigate the association between variables using scatterplot
+cor(Auto[,-9])
+plot(cylinders,mpg01)
+plot(displacement,mpg01)
+plot(horsepower,mpg01)
+plot(weight,mpg01)
+plot(acceleration,mpg01)
+plot(year,mpg01)
+plot(origin,mpg01)
